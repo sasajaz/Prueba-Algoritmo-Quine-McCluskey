@@ -1,0 +1,222 @@
+\doxysection{Utilerias\+Minterminos.\+cpp File Reference}
+\hypertarget{_utilerias_minterminos_8cpp}{}\label{_utilerias_minterminos_8cpp}\index{UtileriasMinterminos.cpp@{UtileriasMinterminos.cpp}}
+
+
+Implementación de utilidades para trabajar con mintérminos en la simplificación de funciones booleanas usando Quine-\/\+Mc\+Cluskey.  
+
+
+{\ttfamily \#include $<$bits/stdc++.\+h$>$}\newline
+{\ttfamily \#include "{}Utilerias\+Minterminos.\+h"{}}\newline
+{\ttfamily \#include "{}mintermino.\+h"{}}\newline
+Include dependency graph for Utilerias\+Minterminos.\+cpp\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_utilerias_minterminos_8cpp_a67efffd9bce2c9d9665727d964212262}{lectura\+Minterminos}} (int \&NUMERO\+\_\+\+MINTERMINOS, vector$<$ int $>$ \&minterminos)
+\begin{DoxyCompactList}\small\item\em Lee los mintérminos desde la entrada estándar. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_utilerias_minterminos_8cpp_a58fbf4f77f63e6a3700e1f747df27fc7}{formacion\+Minterminos}} (int MINTERMINO\+\_\+\+MAXIMO, vector$<$ int $>$ \&minterminos, vector$<$ string $>$ \&minterminos\+Binario, vector$<$ vector$<$ \mbox{\hyperlink{structmintermino}{mintermino}} $>$ $>$ \&clasificacion\+Global\+Minterminos)
+\begin{DoxyCompactList}\small\item\em Convierte los mintérminos a binario y los clasifica según su cantidad de bits encendidos. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_utilerias_minterminos_8cpp_ac39709944f9f638b0e201a3b220ceac4}{clasificacion\+Minterminos}} (int NUM\+\_\+\+BITS, vector$<$ vector$<$ \mbox{\hyperlink{structmintermino}{mintermino}} $>$ $>$ \&clasificacion\+Global\+Minterminos)
+\begin{DoxyCompactList}\small\item\em Clasifica los mintérminos en múltiples iteraciones, combinando aquellos que difieren en un solo bit. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{structmintermino}{mintermino}} $>$ \mbox{\hyperlink{_utilerias_minterminos_8cpp_ab738363862c52e4ca6268dcc7410d696}{impresion\+Tabla\+Minterminos\+Totales}} (int NUMERO\+\_\+\+COLUMNAS, int NUM\+\_\+\+BITS, vector$<$ vector$<$ \mbox{\hyperlink{structmintermino}{mintermino}} $>$ $>$ \&clasificacion\+Global\+Minterminos)
+\begin{DoxyCompactList}\small\item\em Imprime la tabla de combinaciones y retorna los mintérminos que no fueron usados. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_utilerias_minterminos_8cpp_ad10320943ba6476927a7693ad000b98e}{impresion\+Tabla\+Minterminos\+Final}} (vector$<$ \mbox{\hyperlink{structmintermino}{mintermino}} $>$ \&minterminos\+No\+Usados, vector$<$ vector$<$ int $>$ $>$ \&tabla\+Expresiones\+Finales, vector$<$ int $>$ \&minterminos)
+\begin{DoxyCompactList}\small\item\em Imprime la tabla de cobertura de los mintérminos no utilizados. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \mbox{\hyperlink{_utilerias_minterminos_8cpp_a8ca9e7c2c04c453c9db9f75a3443837c}{simplificacion\+Tabla\+Final}} (vector$<$ vector$<$ int $>$ $>$ \&tabla\+Expresiones\+Finales, const int NUMERO\+\_\+\+MINTERMINOS, vector$<$ \mbox{\hyperlink{structmintermino}{mintermino}} $>$ \&minterminos\+No\+Usados)
+\begin{DoxyCompactList}\small\item\em Al seleccionar los implicantes primos esenciales, produce la simplificación final. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_utilerias_minterminos_8cpp_a79274e1c6acb3386dd9f1919abb9a46a}{actualizacion\+Impresion\+Tabla}} (vector$<$ vector$<$ int $>$ $>$ \&tabla\+Expresiones\+Finales, int row, vector$<$ bool $>$ \&minterminos\+Expresados, vector$<$ \mbox{\hyperlink{structmintermino}{mintermino}} $>$ \&minterminos\+No\+Usados)
+\begin{DoxyCompactList}\small\item\em Actualiza la matriz de cobertura eliminando los mintérminos ya cubiertos por un implicante, e imprime la tabla actualizada con los cambios. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementación de utilidades para trabajar con mintérminos en la simplificación de funciones booleanas usando Quine-\/\+Mc\+Cluskey. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{_utilerias_minterminos_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_utilerias_minterminos_8cpp_a79274e1c6acb3386dd9f1919abb9a46a}\index{UtileriasMinterminos.cpp@{UtileriasMinterminos.cpp}!actualizacionImpresionTabla@{actualizacionImpresionTabla}}
+\index{actualizacionImpresionTabla@{actualizacionImpresionTabla}!UtileriasMinterminos.cpp@{UtileriasMinterminos.cpp}}
+\doxysubsubsection{\texorpdfstring{actualizacionImpresionTabla()}{actualizacionImpresionTabla()}}
+{\footnotesize\ttfamily \label{_utilerias_minterminos_8cpp_a79274e1c6acb3386dd9f1919abb9a46a} 
+int actualizacion\+Impresion\+Tabla (\begin{DoxyParamCaption}\item[{vector$<$ vector$<$ int $>$ $>$ \&}]{tabla\+Expresiones\+Finales}{, }\item[{int}]{row}{, }\item[{vector$<$ bool $>$ \&}]{minterminos\+Expresados}{, }\item[{vector$<$ \mbox{\hyperlink{structmintermino}{mintermino}} $>$ \&}]{minterminos\+No\+Usados}{}\end{DoxyParamCaption})}
+
+
+
+Actualiza la matriz de cobertura eliminando los mintérminos ya cubiertos por un implicante, e imprime la tabla actualizada con los cambios. 
+
+Los minterminos cubiertos por cada fila dada son descartados y marcadks como ({\ttfamily -\/1}). Los espacios representan no cobertura,mientras que X es cobertura. Finalmente {\ttfamily \#} para celda descartada.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{in,out}}  & {\em tabla\+Expresiones\+Finales} & Matriz de cobertura actual. \\
+\hline
+\mbox{\texttt{in}}  & {\em row} & Índice de la fila seleccionada para cubrir. \\
+\hline
+\mbox{\texttt{in,out}}  & {\em minterminos\+Expresados} & Vector que indica qué mintérminos ya están cubiertos. \\
+\hline
+\mbox{\texttt{in}}  & {\em minterminos\+No\+Usados} & Vector de implicantes candidatos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Número de mintérminos cubiertos por esta fila. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 1
+\Hypertarget{_utilerias_minterminos_8cpp_ac39709944f9f638b0e201a3b220ceac4}\index{UtileriasMinterminos.cpp@{UtileriasMinterminos.cpp}!clasificacionMinterminos@{clasificacionMinterminos}}
+\index{clasificacionMinterminos@{clasificacionMinterminos}!UtileriasMinterminos.cpp@{UtileriasMinterminos.cpp}}
+\doxysubsubsection{\texorpdfstring{clasificacionMinterminos()}{clasificacionMinterminos()}}
+{\footnotesize\ttfamily \label{_utilerias_minterminos_8cpp_ac39709944f9f638b0e201a3b220ceac4} 
+int clasificacion\+Minterminos (\begin{DoxyParamCaption}\item[{int}]{NUM\+\_\+\+BITS}{, }\item[{vector$<$ vector$<$ \mbox{\hyperlink{structmintermino}{mintermino}} $>$ $>$ \&}]{clasificacion\+Global\+Minterminos}{}\end{DoxyParamCaption})}
+
+
+
+Clasifica los mintérminos en múltiples iteraciones, combinando aquellos que difieren en un solo bit. 
+
+Genera nuevas combinaciones de mintérminos a partir de la iteración 1 en adelante, siguiendo el método de Quine-\/\+Mc\+Cluskey.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em NUM\+\_\+\+BITS} & Número de bits de los mintérminos. \\
+\hline
+\mbox{\texttt{in,out}}  & {\em clasificacion\+Global\+Minterminos} & Estructura global que almacena las combinaciones por iteración. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Número total de columnas de combinaciones generadas. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 2
+\Hypertarget{_utilerias_minterminos_8cpp_a58fbf4f77f63e6a3700e1f747df27fc7}\index{UtileriasMinterminos.cpp@{UtileriasMinterminos.cpp}!formacionMinterminos@{formacionMinterminos}}
+\index{formacionMinterminos@{formacionMinterminos}!UtileriasMinterminos.cpp@{UtileriasMinterminos.cpp}}
+\doxysubsubsection{\texorpdfstring{formacionMinterminos()}{formacionMinterminos()}}
+{\footnotesize\ttfamily \label{_utilerias_minterminos_8cpp_a58fbf4f77f63e6a3700e1f747df27fc7} 
+int formacion\+Minterminos (\begin{DoxyParamCaption}\item[{int}]{MINTERMINO\+\_\+\+MAXIMO}{, }\item[{vector$<$ int $>$ \&}]{minterminos}{, }\item[{vector$<$ string $>$ \&}]{minterminos\+Binario}{, }\item[{vector$<$ vector$<$ \mbox{\hyperlink{structmintermino}{mintermino}} $>$ $>$ \&}]{clasificacion\+Global\+Minterminos}{}\end{DoxyParamCaption})}
+
+
+
+Convierte los mintérminos a binario y los clasifica según su cantidad de bits encendidos. 
+
+Esta función determina cuántos bits se requieren, convierte los mintérminos a binario y los clasifica dentro de {\ttfamily clasificacion\+Global\+Minterminos} por la cantidad de bits en 1.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em MAXIMO} & Valor del mintérmino más grande. \\
+\hline
+\mbox{\texttt{in}}  & {\em minterminos} & Vector con los mintérminos numéricos. \\
+\hline
+\mbox{\texttt{out}}  & {\em minterminos\+Binario} & Vector con representaciones binarias. \\
+\hline
+\mbox{\texttt{out}}  & {\em clasificacion\+Global\+Minterminos} & Estructura que almacena la clasificación de los mintérminos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Número de bits necesarios para hacer los minterminos. 
+\end{DoxyReturn}
+En base al valor mas grande tomamos unicamente los bits necesarios para que queden todos los minterminos con la mínima cantidad de bits posible, para ello de todo el bitset solamente tomamos el segmento que contiene a los bits significativos
+
+Clasificación de los mintérminos en su forma binaria dependiendo de la cantidad de bits que se encuentren prendidos, estos son almacenados en la iteracion 0 de la tabla y clasificados en su correspondiente cantidad de bitsHere is the caller graph for this function\+:
+% FIG 3
+\Hypertarget{_utilerias_minterminos_8cpp_ad10320943ba6476927a7693ad000b98e}\index{UtileriasMinterminos.cpp@{UtileriasMinterminos.cpp}!impresionTablaMinterminosFinal@{impresionTablaMinterminosFinal}}
+\index{impresionTablaMinterminosFinal@{impresionTablaMinterminosFinal}!UtileriasMinterminos.cpp@{UtileriasMinterminos.cpp}}
+\doxysubsubsection{\texorpdfstring{impresionTablaMinterminosFinal()}{impresionTablaMinterminosFinal()}}
+{\footnotesize\ttfamily \label{_utilerias_minterminos_8cpp_ad10320943ba6476927a7693ad000b98e} 
+void impresion\+Tabla\+Minterminos\+Final (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{structmintermino}{mintermino}} $>$ \&}]{minterminos\+No\+Usados}{, }\item[{vector$<$ vector$<$ int $>$ $>$ \&}]{tabla\+Expresiones\+Finales}{, }\item[{vector$<$ int $>$ \&}]{minterminos}{}\end{DoxyParamCaption})}
+
+
+
+Imprime la tabla de cobertura de los mintérminos no utilizados. 
+
+Esta tabla muestra las combinaciones que están relacionadas con cada uno de los mintérminos originales, usando una \textquotesingle{}X\textquotesingle{} para marcar las coincidencias. Al mismo tiempo, se genera una matriz que guarda esta información, la cual será utilizada más adelante para simplificar la función booleana.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{in}}  & {\em minterminos\+No\+Usados} & Vector de mintérminos que no se usaron en las combinaciones anteriores. \\
+\hline
+\mbox{\texttt{out}}  & {\em tabla\+Expresiones\+Finales} & Matriz de cobertura booleana\+: filas(implicantes), columnas(mintérminos). \\
+\hline
+\mbox{\texttt{in}}  & {\em minterminos} & Vector con los mintérminos originales de entrada. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+% FIG 4
+\Hypertarget{_utilerias_minterminos_8cpp_ab738363862c52e4ca6268dcc7410d696}\index{UtileriasMinterminos.cpp@{UtileriasMinterminos.cpp}!impresionTablaMinterminosTotales@{impresionTablaMinterminosTotales}}
+\index{impresionTablaMinterminosTotales@{impresionTablaMinterminosTotales}!UtileriasMinterminos.cpp@{UtileriasMinterminos.cpp}}
+\doxysubsubsection{\texorpdfstring{impresionTablaMinterminosTotales()}{impresionTablaMinterminosTotales()}}
+{\footnotesize\ttfamily \label{_utilerias_minterminos_8cpp_ab738363862c52e4ca6268dcc7410d696} 
+vector$<$ \mbox{\hyperlink{structmintermino}{mintermino}} $>$ impresion\+Tabla\+Minterminos\+Totales (\begin{DoxyParamCaption}\item[{int}]{NUMERO\+\_\+\+COLUMNAS}{, }\item[{int}]{NUM\+\_\+\+BITS}{, }\item[{vector$<$ vector$<$ \mbox{\hyperlink{structmintermino}{mintermino}} $>$ $>$ \&}]{clasificacion\+Global\+Minterminos}{}\end{DoxyParamCaption})}
+
+
+
+Imprime la tabla de combinaciones y retorna los mintérminos que no fueron usados. 
+
+Imprime una tabla donde se listan todas las combinaciones realizadas en cada iteración. Los mintérminos que no pudieron combinarse más son marcados con un {\ttfamily \texorpdfstring{$\ast$}{*}}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em NUMERO\+\_\+\+COLUMNAS} & Total de columnas, cantidad de combinaciones realizadas. \\
+\hline
+ & {\em NUM\+\_\+\+BITS} & Número de bits de cada mintérmino. \\
+\hline
+\mbox{\texttt{in}}  & {\em clasificacion\+Global\+Minterminos} & Estructura global con todos los mintérminos clasificados. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$mintermino$>$ Lista de mintérminos no utilizados, los implicantes primos. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 5
+\Hypertarget{_utilerias_minterminos_8cpp_a67efffd9bce2c9d9665727d964212262}\index{UtileriasMinterminos.cpp@{UtileriasMinterminos.cpp}!lecturaMinterminos@{lecturaMinterminos}}
+\index{lecturaMinterminos@{lecturaMinterminos}!UtileriasMinterminos.cpp@{UtileriasMinterminos.cpp}}
+\doxysubsubsection{\texorpdfstring{lecturaMinterminos()}{lecturaMinterminos()}}
+{\footnotesize\ttfamily \label{_utilerias_minterminos_8cpp_a67efffd9bce2c9d9665727d964212262} 
+int lectura\+Minterminos (\begin{DoxyParamCaption}\item[{int \&}]{NUMERO\+\_\+\+MINTERMINOS}{, }\item[{vector$<$ int $>$ \&}]{minterminos}{}\end{DoxyParamCaption})}
+
+
+
+Lee los mintérminos desde la entrada estándar. 
+
+Solicita al usuario la cantidad de mintérminos, los lee y almacena en un vector. También determina el mintérmino más grande.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{out}}  & {\em NUMERO\+\_\+\+MINTERMINOS} & Cantidad total de mintérminos leída. \\
+\hline
+\mbox{\texttt{out}}  & {\em minterminos} & Vector que almacena los mintérminos introducidos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int El mintérmino más grande. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 6
+\Hypertarget{_utilerias_minterminos_8cpp_a8ca9e7c2c04c453c9db9f75a3443837c}\index{UtileriasMinterminos.cpp@{UtileriasMinterminos.cpp}!simplificacionTablaFinal@{simplificacionTablaFinal}}
+\index{simplificacionTablaFinal@{simplificacionTablaFinal}!UtileriasMinterminos.cpp@{UtileriasMinterminos.cpp}}
+\doxysubsubsection{\texorpdfstring{simplificacionTablaFinal()}{simplificacionTablaFinal()}}
+{\footnotesize\ttfamily \label{_utilerias_minterminos_8cpp_a8ca9e7c2c04c453c9db9f75a3443837c} 
+vector$<$ int $>$ simplificacion\+Tabla\+Final (\begin{DoxyParamCaption}\item[{vector$<$ vector$<$ int $>$ $>$ \&}]{tabla\+Expresiones\+Finales}{, }\item[{const int}]{NUMERO\+\_\+\+MINTERMINOS}{, }\item[{vector$<$ \mbox{\hyperlink{structmintermino}{mintermino}} $>$ \&}]{minterminos\+No\+Usados}{}\end{DoxyParamCaption})}
+
+
+
+Al seleccionar los implicantes primos esenciales, produce la simplificación final. 
+
+Primero encuentra los mintérminos cubiertos por una sola fila que son los implicantes esenciales y utiliza un enfoque iterativo que selecciona los implicantes que cubren la mayor cantidad de mintérminos pendientes hasta completar la cobertura total. Para obtener el conjunto mínimo de implicantes que cubren toda la función.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{in,out}}  & {\em tabla\+Expresiones\+Finales} & Matriz de cobertura booleana. \\
+\hline
+\mbox{\texttt{in}}  & {\em NUMERO\+\_\+\+MINTERMINOS} & Número total de mintérminos que deben ser cubiertos. \\
+\hline
+\mbox{\texttt{in}}  & {\em minterminos\+No\+Usados} & Vector con los implicantes candidatos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$int$>$ Índices de los implicantes seleccionados. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+% FIG 7
+Here is the caller graph for this function\+:
+% FIG 8

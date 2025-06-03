@@ -1,0 +1,96 @@
+\doxysection{main.\+cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{main.cpp@{main.cpp}}
+
+
+Implementación principal del método de Quine-\/\+Mc\+Cluskey para simplificación de funciones booleanas.  
+
+
+{\ttfamily \#include $<$bits/stdc++.\+h$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include "{}Utilerias\+Minterminos.\+h"{}}\newline
+{\ttfamily \#include "{}mintermino.\+h"{}}\newline
+Include dependency graph for main.\+cpp\+:
+% FIG 0
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef long long \mbox{\hyperlink{main_8cpp_a649842e78f219114435121a088c1bed2}{ll}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Punto de entrada principal del programa. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementación principal del método de Quine-\/\+Mc\+Cluskey para simplificación de funciones booleanas. 
+
+Ejemplo de entrada sugerido\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{0\ 4\ 8\ 5\ 12\ 11\ 7\ 15}
+
+\end{DoxyCode}
+
+
+\begin{DoxyNote}{Note}
+COMPILACIÓN\+: Asegúrate de tener todos los archivos del proyecto en una misma carpeta (como se encuentra en Git\+Hub).
+\end{DoxyNote}
+Para compilar\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{g++\ \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}.cpp\ UtileriasMinterminos.cpp\ -\/o\ programa}
+\DoxyCodeLine{./programa}
+
+\end{DoxyCode}
+
+
+\begin{DoxyAuthor}{Author}
+
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Junio de 2025 
+\end{DoxyDate}
+
+
+\label{doc-typedef-members}
+\Hypertarget{main_8cpp_doc-typedef-members}
+\doxysubsection{Typedef Documentation}
+\Hypertarget{main_8cpp_a649842e78f219114435121a088c1bed2}\index{main.cpp@{main.cpp}!ll@{ll}}
+\index{ll@{ll}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{ll}{ll}}
+{\footnotesize\ttfamily \label{main_8cpp_a649842e78f219114435121a088c1bed2} 
+typedef long long \mbox{\hyperlink{main_8cpp_a649842e78f219114435121a088c1bed2}{ll}}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{main_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Punto de entrada principal del programa. 
+
+Lee mintérminos desde entrada, los clasifica, genera las combinaciones de Quine-\/\+Mc\+Cluskey e imprime la tabla de implicantes primos con su cobertura.
+
+\begin{DoxyReturn}{Returns}
+int 0 si la ejecución fue exitosa. 
+\end{DoxyReturn}
+Vector que almacena la clasificación de los mintérminos, en la primera pocisión es el número de bits encendidos que tiene el mintermino el par exterior en su primera posicion tiene otro par con la información del número en bits y en la segunda pocisión tenemos el número del cual surgió el número binario.
+
+\begin{DoxyNote}{Note}
+Estructura\+: \mbox{[}iteracion\+De\+La\+Tabla\mbox{]}\mbox{[}minterminos\+Almacenados\mbox{]}
+\end{DoxyNote}
+IMPORTANTE\+: A partir de la iteracion 1, los minterminos seran clasificados de forma creciente con referencia a la cantidad de bits encendidos sobre el cual se generó la combinación.
+
+Tabla que representa la cobertura de los mintérminos por los implicantes primos.
+
+1 representa una X, 0 representa un espacio vacio
+
+tabla\+Expresiones\+Finales\mbox{[}i\mbox{]}\mbox{[}j\mbox{]} = 1 si el implicante i cubre el mintérmino jHere is the call graph for this function\+:
+% FIG 1

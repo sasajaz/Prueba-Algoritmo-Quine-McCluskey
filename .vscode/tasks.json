@@ -1,0 +1,30 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Compilar y ejecutar C++",
+        "type": "shell",
+        "command": "c:/Users/sasaj/Downloads/gcc/bin/g++.exe",
+        "args": [
+          "-g",
+          "${file}",
+          "-o",
+          "${fileDirname}/${fileBasenameNoExtension}.exe"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": ["$gcc"],
+        "detail": "Compila un archivo C++ con g++"
+      },
+      {
+        "label": "Ejecutar programa",
+        "type": "shell",
+        "command": "${fileDirname}/${fileBasenameNoExtension}.exe",
+        "dependsOn": "Compilar y ejecutar C++",
+        "group": "build"
+      }
+    ]
+  }
+  
